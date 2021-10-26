@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+        Empleados
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleadoItem of Empleados; let IControl=index">
+                    <td>{{empleadoItem.id}}</td>
+                    <td>{{empleadoItem.nombre}}</td>
+                    <td>{{empleadoItem.correo}}</td>
+                    <td>
+                        <a class="btn btn-info" routerLink="/editar-empleado/{{empleadoItem.id}}" >Editar</a>
+                        <a class="btn btn-danger" (click)="borrarEmpleado(empleadoItem.id, IControl)" role="button">Borrar</a> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

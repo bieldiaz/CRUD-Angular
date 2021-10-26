@@ -4,13 +4,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+//CRUD COMPONENTS
+import { AgregarEmpleadoComponent } from './componentes/agregar-empleado/agregar-empleado.component';
+import { EditarEmpleadoComponent } from './componentes/editar-empleado/editar-empleado.component';
+import { ListarEmpleadoComponent } from './componentes/listar-empleado/listar-empleado.component';
+
+//FORMS AND REACTIVE FORMS
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//WORK WITH HTTP
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AgregarEmpleadoComponent,
+    EditarEmpleadoComponent,
+    ListarEmpleadoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
