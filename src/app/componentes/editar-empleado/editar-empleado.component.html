@@ -3,21 +3,20 @@
         Editar empleado
     </div>
     <div class="card-body">
-        <form>
+        <form [formGroup]="formularioEditar" (ngSubmit)="enviarDatos()" ngNativeValidate>
             <div class="mb-3">
               <label for="" class="form-label">Nombre</label>
-              <input type="text"
-                class="form-control" name="" id="" aria-describedby="helpId" placeholder="Escribe tu nombre">
+              <input type="text" required
+                class="form-control" formControlName="nombre" aria-describedby="helpId" placeholder="Escribe tu nombre">
                 <div class="mb-3">
                   <label for="" class="form-label">Correo</label>
-                  <input type="email"
-                    class="form-control" name="" id="" aria-describedby="helpId" placeholder="Escribe tu correo">
+                  <input type="email" required
+                    class="form-control" formControlName="correo" aria-describedby="helpId" placeholder="Escribe tu correo">
                 </div>
             </div>
             <div class="d-grid gap-2">
-              <button type="button" name="" id="" class="btn btn-success">Agregar</button>
-              <button type="button" name="" id="" class="btn btn-primary">Cancelar</button>
-
+              <button type="submit" class="btn btn-warning">Editar</button>
+              <button type="button" class="btn btn-primary" routerLink="/listar-empleado">Cancelar</button>
             </div>
         </form>
     </div>
